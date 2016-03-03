@@ -1,0 +1,66 @@
+node {
+    label: data(name);
+    font-size: 5; /* the lower the value, the more compact the graph */
+    background-fit: cover;
+    color: #666;
+}
+
+node[type = "domain"] {
+    width: 100;
+    height: 100;
+    shape: polygon;
+    shape-polygon-points: -0.5,   1.0,   -0.7,   0.9,   -0.8,   0.7,   -0.88, 0.4,   -0.9,  0.1,   -0.85, -0.2,  -0.75, -0.4,   -0.58, -0.58,         -0.4,  -0.7,   -0.5,  -0.9,   -0.1,  -0.9,   -0.1, -0.95,   0.1, -0.95,   0.1, -0.9,    0.5,  -0.9,    0.4,  -0.7,           0.58, -0.58,   0.75, -0.4,    0.85, -0.2,    0.9,  0.1,    0.88, 0.4,    0.8,  0.7,    0.7,   0.9,    0.5,   1.0;
+}
+
+node[type = "cookie"] {
+    background-image: https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Twemoji_1f36a.svg/2000px-Twemoji_1f36a.svg.png;
+    width: 25;
+    height: 25;    
+}
+
+edge {
+    width: 3;
+    line-color: #ccc;
+    target-arrow-color: #ccc;
+    target-arrow-shape: triangle;
+}
+
+edge[type = "thirdParty"] {
+    line-color: #000000;
+    target-arrow-color: #000000;
+    line-style: dashed;
+}
+
+.filtered {
+    display: none;
+}
+
+node.highlighted {
+	min-zoomed-font-size: 0;
+    	font-size: 10;
+    	z-index: 9999;
+}
+
+node.selected {
+    border-width: 4;
+    border-color: #333;
+}
+ 
+edge.highlighted {
+	opacity: 0.8;
+	width: 4;
+	z-index: 9999;
+}
+ 
+edge.faded {
+	opacity: 0.1;
+}
+ 
+node.faded {
+	opacity: 0.25;
+	text-opacity: 0;
+}
+
+node.faded[type = "cookie"] {
+    background-image: https://;
+}

@@ -1,0 +1,44 @@
+body {
+  width: 650px; 
+  min-height: 100%;
+  position: relative;
+  vertical-align:middle;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #1c1e22;
+}
+
+
+*.unselectable {
+   -webkit-user-select: none;
+   user-select: none;
+}
+
+.expandButtonOpen {
+	background: url('../details_open.png') no-repeat center center;
+	height:20px;
+  	width:20px;
+	cursor: pointer;
+}
+
+.expandButtonClose {
+	background: url('../details_close.png') no-repeat center center;
+	height:20px;
+  	width:20px;
+	cursor: pointer;
+}
+
+td.details-control {
+    background: url('details_open.png') no-repeat center center;
+    
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('../resources/details_close.png') no-repeat center center;
+}
+
+h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+

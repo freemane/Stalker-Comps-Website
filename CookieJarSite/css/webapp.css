@@ -1,0 +1,140 @@
+#cy {
+    width: 90%;
+    height: 750px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+}
+
+/*from http://stackoverflow.com/questions/8160494/how-to-make-a-whole-div-clickable-in-html-and-css-without-javascript*/
+a.fill-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+/*
+ontop divs:  puts an absolute div around each button/element to layer it above 
+the graph. Positions are defined manually to prevent buttons from laying on top 
+of each other.
+*/
+.ontop1 {
+    height: 0px;
+    position: absolute;
+    top: 150px;
+    right: 725px;
+    left: 0px;
+    z-index: 12;
+}
+
+.ontop2 {
+    height: 0px;
+    position: absolute;
+    top: 200px;
+    right: 725px;
+    left: 0px;
+    z-index: 10;
+}
+
+.ontop3 {
+    height: 0px;
+    position: absolute;
+    top: 250px;
+    right: 725px;
+    left: 0px;
+    z-index: 10;
+}
+
+.ontop4 {
+    height: 0px;
+    position: absolute;
+    top: 300px;
+    right: 725px;
+    left: 0px;
+    z-index: 10;
+}
+
+.ontop5 {
+    height: 0px;
+    position: absolute;
+    top: 350px;
+    right: 725px;
+    left: 0px;
+    z-index: 10;
+}
+
+.ontop6 {
+    height: 0px;
+    position: absolute;
+    top: 15px;
+    right: 0px;
+    left: 0px;
+    z-index: 10;
+}
+
+/* fixes the rightmost ontop div to the right side of the page */
+.relative {
+    position: relative;
+    left: 67%;
+}
+
+#tooltip td {
+    background-color: #fff;
+    max-width: 190px;
+    word-wrap: break-word;
+    border-left: none;         
+    border-top: none;              
+    border-bottom: none;    
+    border-right: none; 
+    border-spacing: 0;
+}
+
+#search-wrapper .empty-message {
+    padding: 5px 10px;
+    text-align: center;
+}
+
+*.unselectable {
+   -webkit-user-select: none;
+   user-select: none;
+}
+
+#clearSearch {
+    position: absolute;
+    z-index: 10;
+    left: 92%;
+    top: 0px;
+    bottom: 0px;
+    height: 14px;
+    margin: auto;
+    font-size: 14px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.expandButtonOpen {
+  background: url('../details_open.png') no-repeat center center;
+  height:20px;
+  width:20px;
+  cursor: pointer;
+}
+
+.expandButtonClose {
+  background: url('../details_close.png') no-repeat center center;
+  height:20px;
+  width:20px;
+  cursor: pointer;
+}
+
+
+
+body { font-size: 100%; font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif; }
+ul#tabs { list-style-type: none; margin: 30px 0 0 0; padding: 0 0 0.3em 0; }
+ul#tabs li { display: inline; }
+ul#tabs li a { color: #42454a; background-color: #dedbde; border: 1px solid #c9c3ba; border-bottom: none; padding: 0.3em; text-decoration: none; }
+ul#tabs li a:hover { background-color: #f1f0ee; }
+ul#tabs li a.selected { color: #000; background-color: #f1f0ee; font-weight: bold; padding: 0.7em 0.3em 0.38em 0.3em; }
+div.tabContent { border: 1px solid #c9c3ba; padding: 0.5em; background-color: #f1f0ee; z-index:1; overflow: hidden;}
+div.tabContent.hide {display:none;}
