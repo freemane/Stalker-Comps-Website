@@ -9,28 +9,16 @@
 <title>CookieJar</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--  DataTables  -->
+<!--  Bootstrap and JQuery  -->
 <script type="text/javascript" src="./js/jquery-1.11.3.min.js" ></script>
-<script type="text/javascript" src="./datatables/datatables.min.js"></script>
-<link rel="stylesheet" href="./datatables/datatables.min.css">
 <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
 <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
 
-<!--  Cytoscape  -->
-<script type="text/javascript" src="./cytoscape.js-2.5.4/cytoscape.min.js"></script>
-<link rel="stylesheet" type="text/css" href="./css/webapp.css">
-<link rel="stylesheet" type="text/css" href="./css/typeahead.css">
-<script type="text/javascript" src="./js/typeahead.bundle.min.js"></script>
-<link href="./css/jquery.qtip.min.css" rel="stylesheet" type="text/css" />
-<script src="./js/jquery.qtip.min.js"></script>
-<script src="./js/cytoscape-qtip.js"></script>
-    
-<!--  For displaying the cookies  -->
-<script type="text/javascript" src="./js/webapp.js"></script>
+<!--  Javascript  -->
 <script type="text/javascript" src="./js/cookieDisplay.js"></script>
 
-
 <!--  Style for webapp  -->
+<link rel="stylesheet" type="text/css" href="./css/webapp.css">
 <link href="./css/normalize.css" rel="stylesheet" type="text/css" />
     
 <link rel="icon" type="image/png" href="/icon.png"/>
@@ -43,7 +31,7 @@
 
 </head>
 
-<body>
+<body onload="initializeTabs()">
     <h1>Welcome to CookieJar<img src="icon.png" style="width:50px;height:50px;"></h1>
 
 <!-- List of tabs -->
@@ -81,7 +69,7 @@ Advisor: Amy Csizmar Dalal
 </div>
 
 
-<div class="tabContent" id="resouces" link="blue">
+<div class="tabContent" id="resources" link="blue">
 	<h2>Our Project Resources</h2>
     <a href="https://github.com/freemane/Stalker-Comps">If you're interested in checking out our code, check out our github page here.</a></br>
     <a href="https://chrome.google.com/webstore/detail/cookiejar/iggjkoifhfdidlmfmnfcadofcgkakigm">To download our Chrome Extention from the Chrome Extension store, click here!</a></br>

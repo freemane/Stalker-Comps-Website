@@ -1,82 +1,7 @@
+// global variables for displaying tabs
+var tabLinks = new Array();
+var contentDivs = new Array();
 
-
-/*
-As opposed to createTable, this function incorporates DataTables functionality
-to finalize the creation of the table. It adds the ability to select and
-delete any number of rows where each row represents a cookie.
-Allows for shift clicking to select multiple rows at once
-*/
-
-//TODO - Modularize the shiftClick and show functionality into different functions
-function initializeDataTable(tableName, lengthOption) {
-    if(tableName === "cookieTableWebapp") {
-      cookieTable = $('#' + tableName).DataTable();
-    }
-    else {
-      cookieTable = $('#' + tableName).DataTable({
-        paging: false,
-        scrollY:        "300px",
-        scrollCollapse: true
-      });
-    }
-
-    $('#'+tableName).css({"overflow":"scroll !important","height":"450px !important"});
-
-    // allows a single row to be selected
-    $('#' + tableName + ' tbody').on('click', 'tr', function(e) {
-        if(e.target.childNodes.length > 0) {
-            if(e.target.firstChild.nodeType == 3) {
-                var rows = $('#'+tableName+' > tbody > tr');
-                // If the shift key is down on the click event...
-                if(e.shiftKey) {
-                    shiftClickSelect($(this),rows);
-                }
-                // Otherwise...
-                else {
-                    regularSelect($(this),rows,cookieTable,tableName);
-                }
-            }
-        }
-    });
-
-    // button removes selected rows
-    $('#buttonRemoveRow').click(function() {
-
-        // convert html into an array. adapted from http://stackoverflow.com/a/9579792
-        var selectedCookies = [];
-        cookieTable.$('tr.selected').each(function() {
-            var arrayOfThisRow = [];
-            var tableData = $(this).find('td');
-            if (tableData.length > 0) {
-                tableData.each(function() {
-                    arrayOfThisRow.push($(this).text());
-                });
-                selectedCookies.push(arrayOfThisRow);
-            }
-            // removes all selected rows from table
-            cookieTable.row('tr.selected').remove().draw(false);
-        });
-
-        $(cookieTable.$('tr.selected')).remove();
-        removeSelectedCookies(selectedCookies);
-    });
-    $('#' + tableName).dataTable();
-
-    return cookieTable;
-}
-
-function openWebapp() {
-    var newURL = '/webapp.html';
-    chrome.tabs.create({
-        url: newURL
-    });
-};
-
-/*
-Matches LI items in the list to the corresponding div with the same ID
-*/
-openWebapp();
-initializeTabs();
 showTab();
 
 function initializeTabs() {
@@ -97,8 +22,8 @@ function initializeTabs() {
     var i = 0;
     var selectedId = getHash(window.location.href);
     if (selectedId==='undefined' || selectedId.length<1) {
-        //default opens graph
-        selectedId= 'graph';
+        //default opens about
+        selectedId= 'about';
     }
     for (var id in tabLinks) {
         tabLinks[id].onclick = showTab;
@@ -127,8 +52,7 @@ function showTab() {
         if (id == selectedId) {
             tabLinks[id].className = 'selected';
             contentDivs[id].className = 'tabContent';
-            if (window.firstRun && id == 'graph') {
-                document.getElementById("reset").click();
+            if (window.firstRun && id == 'about') {
                 window.firstRun = false;
             }
         } else {
